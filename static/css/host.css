@@ -1,0 +1,41 @@
+/* trigger */
+
+.trigger {
+    align-items: center;
+    animation: trigger 500ms linear infinite;
+    background: #f00;
+    bottom: 0;
+    color: #fff;
+    display: flex;
+    font-family: Georgia, sans-serif;
+    font-size: 30px;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate3d(0, 0, 0);
+    z-index: 999;
+}
+
+@media (min-width: 500px) {
+    .trigger {
+        font-size: 48px;
+    }
+}
+
+@keyframes trigger {
+    0%, 100% { background: #fff; color: #f00; }
+    50% { background: #f00; color: #fff;}
+}
+
+/* snowflake */
+
+.snowflake {
+    bottom: 10px;
+    font-family: Georgia, sans-serif;
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    z-index: 1000;
+}

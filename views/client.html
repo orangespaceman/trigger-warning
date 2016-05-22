@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trigger warning</title>
+    <link rel="stylesheet" href="css/client.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <form class="js-form">
+        <fieldset>
+            <legend>You</legend>
+            <label>Who are you?</label>
+            <input class="js-input" type="text" name="name" placeholder="Name">
+            <button class="js-submit" type="submit" disabled>Let's go!</button>
+        </fieldset>
+    </form>
+    <button class="trigger js-trigger">Trigger warning!</button>
+
+    <p class="bookmarklet">
+        Bookmarklet:
+        <a href="javascript:(function(){var rootUrl='http://localhost:7005';if(!window.io){loadScript(rootUrl+'/js/socket.io.js',trigger);}else{trigger();}function loadScript(src,callback){var s=document.createElement('script');s.src=src;s.async=true;s.onreadystatechange=s.onload=function(){var state=s.readyState;if(!callback.done&&(!state||/loaded|complete/.test(state))){callback.done=true;callback();}};document.getElementsByTagName('head')[0].appendChild(s);}function trigger(){var socket=io(rootUrl+'/client');socket.emit('trigger',{name:'[bookmarket]'});}})();">
+            Trigger warning
+        </a>
+    </p>
+
+    <script>var rootUrl = '';</script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/client.js"></script>
+</body>
+</html>
